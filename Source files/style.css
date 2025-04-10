@@ -1,3 +1,4 @@
+/* Cherry Blossom Theme CSS */
 :root {
     --cherry-pink: #ffb3c1;
     --sakura-pink: #f4a6b3;
@@ -37,18 +38,11 @@ body {
 }
 
 .title {
-    font-family: 'Parisienne', cursive;
+    font-family: 'Helvetica', cursive;
     font-size: 4rem;
     color: var(--deep-blossom);
     text-shadow: 2px 2px 4px rgba(231, 84, 128, 0.2);
     margin-bottom: 0.5rem;
-}
-
-.japanese-text {
-    font-family: 'Ma Shan Zheng', cursive;
-    display: block;
-    font-size: 2.5rem;
-    margin-top: 0.5rem;
 }
 
 /* Slideshow Styles */
