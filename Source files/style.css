@@ -1,0 +1,26 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#calendar {
+    margin-bottom: 40px;
+}
+
+#music-player {
+    margin-bottom: 40px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
