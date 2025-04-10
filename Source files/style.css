@@ -1,26 +1,197 @@
-.container {
+:root {
+    --cherry-pink: #ffb3c1;
+    --sakura-pink: #f4a6b3;
+    --deep-blossom: #e75480;
+    --vintage-paper: #fff5ee;
+}
+
+body {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe8eb 100%);
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Cherry Blossom Effects */
+.petals {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffb3c1" d="M50 0Q53 25 60 30Q40 35 50 50Q60 65 40 70Q53 75 50 100Q47 75 60 70Q40 65 50 50Q60 35 40 30Q47 25 50 0Z"/></svg>');
+    background-size: 40px;
+    animation: petals-fall 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes petals-fall {
+    from { background-position: 0 -100vh }
+    to { background-position: 0 100vh }
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.title {
+    font-family: 'Parisienne', cursive;
+    font-size: 4rem;
+    color: var(--deep-blossom);
+    text-shadow: 2px 2px 4px rgba(231, 84, 128, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+.japanese-text {
+    font-family: 'Ma Shan Zheng', cursive;
+    display: block;
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    width: 80%;
+    height: 400px;
+    margin: 2rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(231, 84, 128, 0.2);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.slideshow-container:hover {
+    transform: scale(1.02);
+}
+
+.slideshow-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slideShow 20s infinite;
+}
+
+@keyframes slideShow {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+.slideshow-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.slideshow-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    color: white;
+    text-align: center;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.5rem;
+}
+
+/* Calendar Styles */
+.calendar-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(231, 84, 128, 0.1);
+    margin: 2rem;
+}
+
+.fc {
+    font-family: 'Arial', sans-serif;
+}
+
+.fc-toolbar-title {
+    font-family: 'Parisienne', cursive;
+    color: var(--deep-blossom) !important;
+    font-size: 2rem !important;
+}
+
+.fc-daygrid-day-number {
+    color: var(--deep-blossom);
+}
+
+.fc-day-today {
+    background-color: var(--vintage-paper) !important;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
 }
 
-#calendar {
-    margin-bottom: 40px;
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
-#music-player {
-    margin-bottom: 40px;
-}
-
-.photo {
-    width: 200px;
+.photo-grid img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
-.photo:hover {
+.photo-grid img:hover {
     transform: scale(1.05);
+}
+
+.upload-btn {
+    display: block;
+    width: max-content;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    background: var(--deep-blossom);
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+    background: var(--sakura-pink);
+}
+
+.close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    font-size: 2rem;
+    color: var(--deep-blossom);
+    cursor: pointer;
 }
