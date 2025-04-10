@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 // app.js
+
+//Spotify Player
 const spotifyLogin = document.getElementById('spotify-login');
 let player;
 
@@ -36,7 +38,6 @@ spotifyLogin.addEventListener('click', () => {
     const scopes = encodeURIComponent('streaming user-read-email user-read-private');
     window.location = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectUri}&scope=${scopes}`;
 });
-//Spotify
 // Handle OAuth callback
 window.addEventListener('load', () => {
     const hash = window.location.hash.substr(1);
@@ -59,6 +60,15 @@ function initializePlayer(token) {
 
     player.connect();
 }
+<iframe class="spotify-embed" 
+                src="https://open.spotify.com/embed/playlist/6wm8OFbsAYxxeBlOjDTJQy?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameborder="0" 
+                allowfullscreen 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+        </iframe>
 
 //Photo Album
 // app.js
