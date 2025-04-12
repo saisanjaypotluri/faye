@@ -3,64 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Cherry Blossom Love 🌸</title>
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <style>
-        /* Basic reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-    </style>
 </head>
 <body>
-    <div class="cherry-blossom-container">
-        <div class="petals"></div>
-        
-        <header class="header">
-            <h1 class="title">Isis fayelle Fedraw</h1>
-        </header>
-
-        <div class="main-container">
-            <!-- Slideshow Section -->
-            <div class="slideshow-container" id="slideshow" onclick="openPhotoAlbum()">
-                <div class="slideshow-track" id="slideshow-track"></div>
-                <div class="slideshow-overlay">Click to View Memories 🌸</div>
-            </div>
-
-            <!-- Content Container -->
-            <div class="content-container">
-                <!-- Calendar Section -->
-                <div class="calendar-section">
-                    <div id="calendar"></div>
-                </div>
-
-                <!-- Music Section -->
-                <div class="music-section">
-                    <iframe class="spotify-embed" 
-                            src="https://open.spotify.com/embed/playlist/6wm8OFbsAYxxeBlOjDTJQy?utm_source=generator" 
-                            allowfullscreen 
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                            loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-
-        <!-- Photo Album Modal -->
-        <div id="photoModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closePhotoAlbum()">&times;</span>
-                <div class="photo-grid" id="photo-grid"></div>
-                <label class="upload-btn">
-                    <input type="file" id="photo-upload" multiple accept="image/*">
-                    Add More Memories 🌸
-                </label>
+    <div id="heart-container">
+        <div class="heart" id="heart">❤</div>
+    </div>
+    
+    <div id="main-content" class="hidden">
+        <div class="proposal-container">
+            <h1 class = "name">Isis Fayelle Fedraw</h1>
+            <h1>Can I be yours?</h1>
+            <div class="buttons">
+                <button id="yes-btn">Yes! ❤️</button>
+                <button id="no-btn">No</button>
             </div>
         </div>
     </div>
-
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    
     <script src="app.js"></script>
 </body>
 </html>
