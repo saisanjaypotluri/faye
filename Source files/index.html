@@ -5,20 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For You ❤️</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="heart-container">
-        <div class="heart" id="heart">❤</div>
+        <div class="hearts-wrapper">
+            <div class="heart main-heart" id="heart">🩷</div>
+            <div class="heart small-heart">🩷</div>
+        </div>
+    </div>
+    
+    <div id="title-screen" class="hidden">
+        <h1>US ❤️</h1>
+    </div>
+    
+    <div id="slideshow-container" class="hidden">
+        <!-- Images loaded by JavaScript -->
     </div>
     
     <div id="main-content" class="hidden">
         <div class="proposal-container">
-            <h1 class = "name">Isis Fayelle Fedraw</h1>
-            <h1>Can I be yours?</h1>
+            <h1 class="name">My Love</h1>
+            <h1 class="question">Will you be my Valentine?</h1>
             <div class="buttons">
                 <button id="yes-btn">Yes! ❤️</button>
-                <button id="no-btn">No</button>
+                <button id="no-btn">Umm...</button>
             </div>
         </div>
     </div>
