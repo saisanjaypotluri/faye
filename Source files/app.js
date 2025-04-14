@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function startEmojiFloaters() {
       emojiBackground.style.display = 'block';  // Ensure the emoji background is visible during the slideshow
-      const emojis = ['🩷', '💫', '✨', '🌸', '💖', '💎'];
+      const emojis = ['🩷', '💫', '✨', '🌸', '💖', '💎', '🌷', '🐈', '💕', '🐈‍⬛',  '🧿', '💛', '🤟', '🌙', '🌟'];
       setInterval(() => {
         const emoji = document.createElement('div');
         emoji.className = 'floating-emoji';
