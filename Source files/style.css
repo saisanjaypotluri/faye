@@ -3,10 +3,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Helvetica Neue', sans-serif;
-}
-
-/* Heart Container */
-#heart-container {
+  }
+  
+  body {
+    background: #000;
+    overflow: hidden;
+  }
+  
+  /* Heart Container */
+  #heart-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,60 +24,85 @@
     z-index: 1000;
     cursor: pointer;
     transition: opacity 1s ease;
-}
-
-#heart-container.hidden {
+  }
+  
+  #heart-container.hidden {
     z-index: 0;
-}
-
-.hearts-wrapper {
+  }
+  
+  .hearts-wrapper {
     position: relative;
     width: 100px;
     height: 100px;
-}
-
-.heart {
+  }
+  
+  .heart {
     position: absolute;
     font-size: 100px;
     color: #ff6b81;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-.main-heart {
+  }
+  
+  .main-heart {
     animation-name: pulse-main;
-}
-
-.small-heart {
-    font-size: 50px;
+  }
+  
+  .small-heart {
+    font-size: 45px;
     top: -25px;
     right: -25px;
     animation-name: pulse-small;
     animation-delay: 0.75s;
-}
-
-@keyframes pulse-main {
+  }
+  
+  @keyframes pulse-main {
     0% { transform: scale(1); opacity: 0.9; }
     100% { transform: scale(1.1); opacity: 1; }
-}
-
-@keyframes pulse-small {
+  }
+  
+  @keyframes pulse-small {
     0% { transform: scale(1); opacity: 0.9; }
     100% { transform: scale(1.1); opacity: 1; }
-}
-
-@keyframes zoom {
+  }
+  
+  @keyframes zoom {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(15); opacity: 0; }
-}
-
-.hearts-wrapper.zooming {
+  }
+  /* Added styles for the "Touch our hearts" text */
+#touch-text {
+    font-family: 'Great Vibes', cursive;  /* Cursive font */
+    font-size: 3rem;
+    color: #d22086;  /* Same pink color as hearts */
+    position: absolute;
+    bottom: 25%;  /* Positioned 25% from the bottom */
+    text-align: center;
+    width: 100%;
+    z-index: 1100;
+    animation: fadeInUp 1s ease forwards, glow 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Glowing effect for the text */
+  @keyframes glow {
+    0% { text-shadow: 0 0 10px #d22086, 0 0 20px #d22086, 0 0 30px #d22086, 0 0 40px #d22086; }
+    100% { text-shadow: 0 0 20px #d22086, 0 0 30px #d22086, 0 0 40px #d22086, 0 0 50px #d22086; }
+  }
+  
+  
+  
+  .hearts-wrapper.zooming {
     animation: zoom 1s ease forwards;
-}
-
-/* Title Screen */
-#title-screen {
+  }
+  
+  /* Title Screen */
+  #title-screen {
     position: fixed;
     top: 0;
     left: 0;
@@ -84,50 +114,50 @@
     align-items: center;
     z-index: 900;
     transition: opacity 0.8s ease;
-}
-
-#title-screen h1 {
+  }
+  
+  #title-screen h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 5rem;
     color: #ff6b81;
     animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn {
+  }
+  
+  @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-/* Slideshow */
-#slideshow-container {
+  }
+  
+  /* Slideshow Container */
+  #slideshow-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
-    z-index: 800;
+    background: transparent;
+    z-index: 400;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.slideshow-image {
-    max-width: 90%;
-    max-height: 90%;
+  }
+  
+  .slideshow-image {
+    max-width: 100%;
+    max-height: 100%;
     position: absolute;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.slideshow-image.active {
+  }
+  
+  .slideshow-image.active {
     opacity: 1;
-}
-
-/* Proposal Container */
-#proposal-container {
+  }
+  
+  /* Proposal Container */
+  #proposal-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -136,12 +166,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 700;
+    z-index: 500;
     background: transparent;
     transition: all 1s ease;
-}
-
-.background-overlay {
+    overflow: hidden;
+  }
+  
+  .background-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -150,88 +181,110 @@
     background-size: cover;
     background-position: center;
     filter: blur(10px) brightness(0.6);
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-#proposal-container.active .background-overlay {
     opacity: 1;
-}
-
-.proposal-content {
-    position: relative;
-    z-index: 1;
-    background: rgba(255,255,255,0.9);
-    padding: 2rem 3rem;
-    border-radius: 15px;
+    z-index: 200;
+  }
+  
+  /* Emoji Background + Sparkles */
+  #emoji-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 300;
+    display: block;  /* Ensure it's visible on all pages */
+  }
+  
+  
+  #sparkle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 310;
+  }
+  
+  .floating-emoji {
+    position: absolute;
+    pointer-events: none;
+    z-index: 320;
+    transition: transform 0.2s ease-out;
+  }
+  
+  /* Proposal Content */
+  .proposal-content {
+    position:fixed;
+    z-index: 400;
+    /* background: rgba(255,255,255,0.9); */
+    /* padding: 2rem 3rem; */
+    /* border-radius: 15px; */
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* box-shadow: 0 10px 10px rgba(0,0,0,0.3); */
     transform: scale(0.9);
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
     animation-delay: 0.5s;
-}
-
-.name {
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .name {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    color: #d23669;
+    font-size: 4rem;
+    color: #000000;
     margin-bottom: 0.5rem;
-}
-
-.question {
-    font-family: 'Tangerine', cursive;
-    font-size: 3rem;
+  }
+  
+  .question {
+    font-family: 'Tangerine', sans-serif;
+    font-size: 5rem;
     color: #d23669;
     margin-bottom: 2rem;
-}
-
-.buttons {
+  }
+  
+  .buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
-}
-
-button {
+  }
+  
+  button {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 50px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-#yes-btn {
+  }
+  
+  #yes-btn {
     background: #d23669;
     color: white;
-}
-
-#yes-btn:hover {
+  }
+  
+  #yes-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(210, 54, 105, 0.4);
-}
-
-#no-btn {
+    box-shadow: 0 5px 15px rgba(210,54,105,0.4);
+  }
+  
+  #no-btn {
     background: #f1f1f1;
     color: #333;
-}
-
-#no-btn:hover {
+  }
+  
+  #no-btn:hover {
     background: #e0e0e0;
-}
-
-.hidden {
+  }
+  
+  .hidden {
     opacity: 0;
     pointer-events: none;
-}
-
-@keyframes fadeInUp {
-    from { 
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to { 
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  }
+  

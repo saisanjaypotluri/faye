@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Love Story ❤️</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Story ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
+    <!-- Heart Container (start screen) -->
     <div id="heart-container">
-        <div class="hearts-wrapper">
-            <div class="heart main-heart">🩷</div>
-            <div class="heart small-heart">🩷</div>
-        </div>
+      <div class="hearts-wrapper">
+        <div class="heart main-heart">🩷</div>
+        <div class="heart small-heart">🩷</div>
+      </div>
     </div>
-    
+
+    <div id="touch-text">Touch our hearts</div>
+
+    <!-- Title Screen -->
     <div id="title-screen" class="hidden">
-        <h1>Our Memories ❤️</h1>
+      <h1>🧿 Memories ❤️</h1>
     </div>
-    
+  
+    <!-- Slideshow Container -->
     <div id="slideshow-container" class="hidden"></div>
-    
+  
+    <!-- Proposal Container -->
     <div id="proposal-container" class="hidden">
-        <div class="background-overlay"></div>
-        <div class="proposal-content">
-            <h1 class="name">My Love</h1>
-            <h1 class="question">Will you be mine forever?</h1>
-            <div class="buttons">
-                <button id="yes-btn">Yes! ❤️</button>
-                <button id="no-btn">Maybe</button>
+      <div class="background-overlay"></div>
+      <div id="emoji-background-proposal"></div>
+      <canvas id="sparkle-canvas-proposal"></canvas>
+      <div class="proposal-content">
+          <h1 class="name">✨Isis Fayelle Fedraw🌷</h1>
+          <h1 class="question">Can I be your boyfriend?</h1>
+          <div class="buttons">
+              <button id="yes-btn">Yes! ❤️</button>
+              <button id="no-btn">Maybe</button>
             </div>
         </div>
     </div>
-
+    
+    <!-- Emoji Background (moved outside the proposal container for visibility throughout the site) -->
+    <div id="emoji-background"></div>
+    
+    <canvas id="sparkle-canvas"></canvas>
+  
     <script src="app.js"></script>
-</body>
-</html>
+  </body>
+  
